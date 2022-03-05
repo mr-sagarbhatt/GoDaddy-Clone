@@ -16,23 +16,23 @@ const authPage = (permissions) => {
 };
 
 // *********** AUTHENTICATE USER ACCESS ***********
-const authUser = (permissions) => {
-  return async (req, res, next) => {
-    const id = parseInt(req.params.userId);
-    const user = await getUser(id);
-    const loggedUId = parseInt(req.decoded._id);
-    const loggedUser = await getUser(loggedUId);
-    if (permissions.includes(loggedUser.roleId)) {
-      next();
-    } else if (loggedUId === id) {
-      next();
-    } else {
-      res.status(403).json({
-        message: "You don't have permission!",
-      });
-    }
-  };
-};
+// const authUser = (permissions) => {
+//   return async (req, res, next) => {
+//     const id = parseInt(req.params.userId);
+//     const user = await getUser(id);
+//     const loggedUId = parseInt(req.decoded._id);
+//     const loggedUser = await getUser(loggedUId);
+//     if (permissions.includes(loggedUser.roleId)) {
+//       next();
+//     } else if (loggedUId === id) {
+//       next();
+//     } else {
+//       res.status(403).json({
+//         message: "You don't have permission!",
+//       });
+//     }
+//   };
+// };
 
 // const authUser = (permissions) => {
 //   return async (req, res, next) => {
@@ -60,4 +60,4 @@ const authUser = (permissions) => {
 //   };
 // };
 
-module.exports = { authPage, authUser };
+module.exports = { authPage };

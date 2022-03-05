@@ -59,3 +59,16 @@
     }
   }
 }
+
+.domain-result-success {
+  @include block-spacer(0.5rem, 0.5rem);
+  font-size: 1.4rem;
+  margin-left: 10px;
+  color: $dark-cyan;
+}
+.domain-result-error {
+  @include block-spacer(0.5rem, 0.5rem);
+  font-size: 1.4rem;
+  margin-left: 10px;
+  color: $danger;
+}

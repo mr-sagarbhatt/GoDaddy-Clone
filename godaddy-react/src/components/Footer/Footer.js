@@ -2,6 +2,7 @@ import "./footer.scss";
 import Logo from "../../assets/images/svg/GoDaddyGuidesLogoWhite.svg";
 import Arrow from "../../assets/images/svg/care-arrow.svg";
 import WineLogo from "../../assets/images/svg/GoDaddy-White-Logo.wine.svg";
+import { Link } from "react-router-dom";
 
 import { FaFacebook, FaInstagramSquare, FaYoutube } from "react-icons/fa";
 
@@ -209,9 +210,11 @@ const Footer = () => {
       </nav>
       {/* <!-- footer-controls --> */}
       <div className='footer-controls'>
-        <div className='logo'>
-          <img src={WineLogo} alt='logo' height='35px' width='166px' />
-        </div>
+        <Link to='/'>
+          <div className='logo'>
+            <img src={WineLogo} alt='logo' height='35px' width='166px' />
+          </div>
+        </Link>
         <hr className='hr' />
         <div className='social-media'>
           <FaFacebook className='text-white' size='1.5rem'></FaFacebook>

@@ -1,6 +1,8 @@
 const SubCategoryDomain = require("../domains/subcategory.domain");
 const express = require("express");
 const router = express.Router();
+const verifyToken = require("../authentication/verifyToken");
+const { authPage } = require("../authentication/authorization");
 
 class SubCategoryController {
   // *********** GET ALL SUB CATEGORIES ***********

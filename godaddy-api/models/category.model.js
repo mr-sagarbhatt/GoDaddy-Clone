@@ -1,5 +1,6 @@
 const { Schema, model, connection } = require("mongoose");
 const AutoIncrementFactory = require("mongoose-sequence");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
 const AutoIncrement = AutoIncrementFactory(connection);
 
@@ -53,6 +54,8 @@ const categorySchema = new Schema(
 categorySchema.plugin(AutoIncrement, {
   id: "category_seq",
 });
+
+categorySchema.plugin(mongoosePaginate);
 
 const CategoryModel = model("category", categorySchema);
 

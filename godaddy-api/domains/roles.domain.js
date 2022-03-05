@@ -3,7 +3,7 @@ const { validateRole } = require("../utils/joi.validations");
 
 class RolesDomain {
   // *********** GET ALL ACTIVE USER ROLES ***********
-  async getAllRoles(req, res) {
+  async getAllRoles(req, res, next) {
     try {
       const role = await RolesModel.find({ isActive: 1 });
       if (role.length > 0) {
@@ -14,12 +14,12 @@ class RolesDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** CREATE USER ROLE ***********
-  async createRole(req, res) {
+  async createRole(req, res, next) {
     try {
       const data = req.body;
       // * VALIDATE BODY DATA *
@@ -40,12 +40,12 @@ class RolesDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** UPDATE USER ROLE ***********
-  async updateRole(req, res) {
+  async updateRole(req, res, next) {
     try {
       const _id = parseInt(req.params.roleId);
       const data = req.body;
@@ -70,12 +70,12 @@ class RolesDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** DELETE USER ROLE ***********
-  async deleteRole(req, res) {
+  async deleteRole(req, res, next) {
     try {
       const _id = parseInt(req.params.roleId);
       const role = await RolesModel.findByIdAndUpdate(
@@ -91,7 +91,7 @@ class RolesDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

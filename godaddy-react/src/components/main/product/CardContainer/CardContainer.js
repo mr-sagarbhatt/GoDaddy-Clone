@@ -1,136 +1,91 @@
 import "./card-container.scss";
+import { useSubCategoryContext } from "../../../../contexts/SubCategoryContext";
+import { useProductContext } from "../../../../contexts/ProductContext";
+import { useCartContext } from "../../../../contexts/CartContext";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import Loader from "../../../Loader/Loader";
+import DomainSearch from "../Domain/DomainSearch";
 
 const CardContainer = () => {
+  const navigate = useNavigate();
+  const { categorySlug } = useParams();
+  const { subCategorySlug } = useParams();
+  const { productLoader, products } = useProductContext();
+  const { subCategoryLoader, subCategories } = useSubCategoryContext();
+  const { fnAddToCart } = useCartContext();
+
+  const productsArray = products.filter(
+    (product) => product?.subCategoryId.slug === subCategorySlug
+  );
+  const subCategory = subCategories.find(
+    (subCategory) => subCategory?.slug === subCategorySlug
+  );
+
+  const addToCartHandler = (productId) => {
+    navigate("/cart");
+    fnAddToCart({ productId });
+    // console.log(userCart);
+  };
+
   return (
     // <!-- product-card-container -->
-    <section className='product-card-container'>
-      <div className='card-group'>
-        <div className='card product-card'>
-          <h3 className='title'>Starter</h3>
-          <div className='content'>
-            Low-cost affordable hosting to get you started.
-          </div>
-          <div className='price-content'>
-            <p className='price-wrapper'>
-              <span className='amount'>&#x20B9; 99.00</span>
-              <span className='term'>/mo</span>
-            </p>
-            <p className='sales-callout'>
-              <strong className='highlight'>
-                With a 3-yr term (50% savings)
-              </strong>
-            </p>
-            <p className='below-price'>&#x20B9; 199.00/mo when you renew4</p>
-          </div>
-          <div className='btn-container'>
-            <button className='btn btn-dark'>Add to Cart</button>
-          </div>
-          <div className='feature-list'>
-            <ul>
-              <li>512 MB RAM</li>
-              <li>1 website</li>
-              <li>Unmetered bandwidth</li>
-              <li>30 GB storage</li>
-              <li>1 database</li>
-              <li>Free 1-click WordPress install</li>
-            </ul>
-          </div>
-        </div>
-        <div className='card product-card'>
-          <h3 className='title'>Starter</h3>
-          <div className='content'>
-            Low-cost affordable hosting to get you started.
-          </div>
-          <div className='price-content'>
-            <p className='price-wrapper'>
-              <span className='amount'>&#x20B9; 99.00</span>
-              <span className='term'>/mo</span>
-            </p>
-            <p className='sales-callout'>
-              <strong className='highlight'>
-                With a 3-yr term (50% savings)
-              </strong>
-            </p>
-            <p className='below-price'>&#x20B9; 199.00/mo when you renew4</p>
-          </div>
-          <div className='btn-container'>
-            <button className='btn btn-dark'>Add to Cart</button>
-          </div>
-          <div className='feature-list'>
-            <ul>
-              <li>512 MB RAM</li>
-              <li>1 website</li>
-              <li>Unmetered bandwidth</li>
-              <li>30 GB storage</li>
-              <li>1 database</li>
-              <li>Free 1-click WordPress install</li>
-            </ul>
-          </div>
-        </div>
-        <div className='card product-card'>
-          <h3 className='title'>Starter</h3>
-          <div className='content'>
-            Low-cost affordable hosting to get you started.
-          </div>
-          <div className='price-content'>
-            <p className='price-wrapper'>
-              <span className='amount'>&#x20B9; 99.00</span>
-              <span className='term'>/mo</span>
-            </p>
-            <p className='sales-callout'>
-              <strong className='highlight'>
-                With a 3-yr term (50% savings)
-              </strong>
-            </p>
-            <p className='below-price'>&#x20B9; 199.00/mo when you renew4</p>
-          </div>
-          <div className='btn-container'>
-            <button className='btn btn-dark'>Add to Cart</button>
-          </div>
-          <div className='feature-list'>
-            <ul>
-              <li>512 MB RAM</li>
-              <li>1 website</li>
-              <li>Unmetered bandwidth</li>
-              <li>30 GB storage</li>
-              <li>1 database</li>
-              <li>Free 1-click WordPress install</li>
-            </ul>
-          </div>
-        </div>
-        <div className='card product-card'>
-          <h3 className='title'>Starter</h3>
-          <div className='content'>
-            Low-cost affordable hosting to get you started.
-          </div>
-          <div className='price-content'>
-            <p className='price-wrapper'>
-              <span className='amount'>&#x20B9; 99.00</span>
-              <span className='term'>/mo</span>
-            </p>
-            <p className='sales-callout'>
-              <strong className='highlight'>
-                With a 3-yr term (50% savings)
-              </strong>
-            </p>
-            <p className='below-price'>&#x20B9; 199.00/mo when you renew4</p>
-          </div>
-          <div className='btn-container'>
-            <button className='btn btn-dark'>Add to Cart</button>
-          </div>
-          <div className='feature-list'>
-            <ul>
-              <li>512 MB RAM</li>
-              <li>1 website</li>
-              <li>Unmetered bandwidth</li>
-              <li>30 GB storage</li>
-              <li>1 database</li>
-              <li>Free 1-click WordPress install</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    <>
+      {subCategoryLoader && productLoader ? (
+        <Loader></Loader>
+      ) : (
+        <>
+          {categorySlug === "domains" ? (
+            <DomainSearch></DomainSearch>
+          ) : (
+            <section
+              className='product-card-container'
+              id='product-card-container'
+            >
+              {productsArray.length > 0 ? (
+                <div className='card-group'>
+                  {productsArray.map((product) => (
+                    <div className='card product-card'>
+                      <h3 className='title'>{product.name}</h3>
+                      <div className='content'>{product.desc}</div>
+                      <div className='price-content'>
+                        <p className='price-wrapper'>
+                          <span className='amount'>
+                            &#x20B9; {product.price.toFixed(2)}
+                          </span>
+                          <span className='term'>/mo</span>
+                        </p>
+                      </div>
+                      <div className='btn-container'>
+                        <button
+                          className='btn btn-dark'
+                          onClick={() => {
+                            addToCartHandler(product._id);
+                          }}
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                      <div className='feature-list'>
+                        <ul>
+                          {product.extras.map((info) => (
+                            <li>{info}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className='no-products'>
+                  {`${subCategory?.name} is not available at the moment.Please try again
+          later.`}
+                </div>
+              )}
+            </section>
+          )}
+        </>
+      )}
+    </>
   );
 };
 

@@ -11,20 +11,34 @@ const AuthProvider = ({ children }) => {
   // *********** CURRENT USER ***********
   const [userToken, setUserToken] = useState("");
   const [user, setUser] = useState({});
+  const [authLoader, setAuthLoader] = useState(false);
 
   useEffect(() => {
+    setAuthLoader(true);
     const token = getToken();
     setUserToken(token);
+    setAuthLoader(false);
   }, []);
 
   // *********** SET CURRENT USER WHEN USER LOGGED IN ***********
   const setLoggedUSer = async () => {
     if (userToken !== "") {
-      //  * GET LOGGED USER *
-      const userData = await getLoggedUser();
-      //  * SET LOGGED USER *
-      // await setLoggedUSer(userData.data);
-      setUser(userData.data);
+      try {
+        setAuthLoader(true);
+        //  * GET LOGGED USER *
+        const userData = await getLoggedUser();
+        if (Object.keys(userData.data).length > 0) {
+          //  * SET LOGGED USER *
+          // await setLoggedUSer(userData.data);
+          setUser(userData.data);
+        } else {
+          setUser({});
+        }
+        setAuthLoader(false);
+      } catch (err) {
+        console.log(err.response.data.message || err.message);
+        setAuthLoader(false);
+      }
     } else {
       setUser({});
     }
@@ -36,6 +50,8 @@ const AuthProvider = ({ children }) => {
   }, [userToken]);
 
   const value = {
+    authLoader,
+    setAuthLoader,
     user,
     setUser,
     setUserToken,

@@ -16,8 +16,11 @@ class UserDomain {
         "roleId",
         "role -_id"
       );
-      if (user) {
-        res.send(user);
+      const profile = await ProfileModel.findOne({ userId: _id });
+      let userData = JSON.parse(JSON.stringify(user));
+      userData.profile = profile;
+      if (userData) {
+        res.send(userData);
       } else {
         res.status(400).json({
           message: "User logged out!",
@@ -203,7 +206,6 @@ class UserDomain {
         });
       }
     } catch (err) {
-      console.log(err);
       next(err);
     }
   }

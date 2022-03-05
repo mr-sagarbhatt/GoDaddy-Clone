@@ -3,7 +3,7 @@ const { validateBilling } = require("../utils/joi.validations");
 
 class BillDomain {
   // *********** GET ALL BILLS ***********
-  async getAllBills(req, res) {
+  async getAllBills(req, res, next) {
     try {
       const bill = await BillingModel.find();
       if (bill.length > 0) {
@@ -14,12 +14,12 @@ class BillDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** CREATE BILL ***********
-  async createBill(req, res) {
+  async createBill(req, res, next) {
     try {
       const data = req.body;
       // * VALIDATE BODY DATA *
@@ -40,12 +40,12 @@ class BillDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** UPDATE BILL ***********
-  async updateBill(req, res) {
+  async updateBill(req, res, next) {
     try {
       const _id = parseInt(req.params.billId);
       const data = req.body;
@@ -70,12 +70,12 @@ class BillDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** DELETE BILL ***********
-  async deleteBill(req, res) {
+  async deleteBill(req, res, next) {
     try {
       const _id = parseInt(req.params.billId);
       const bill = await BillingModel.findByIdAndUpdate(
@@ -91,7 +91,7 @@ class BillDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

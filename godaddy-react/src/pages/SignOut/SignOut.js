@@ -5,12 +5,15 @@ import { useAuthContext } from "../../contexts/AuthContext";
 
 const SignOut = () => {
   const navigate = new useNavigate();
-  const { setUserToken } = useAuthContext();
+  const { authLoader, setAuthLoader, setUserToken, setUser } = useAuthContext();
 
   useEffect(() => {
+    setAuthLoader(true);
     removeToken();
     setUserToken("");
-    navigate("/", { replace: true });
+    setUser({});
+    setAuthLoader(false);
+    navigate("/");
   }, [navigate]);
 
   return <></>;

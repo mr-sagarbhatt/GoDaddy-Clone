@@ -14,6 +14,7 @@ const useSigninContext = () => useContext(SigninContext);
 const SigninProvider = ({ children }) => {
   const navigate = useNavigate();
   const { setUserToken } = useAuthContext();
+  const [signInLoader, setSignInLoader] = useState(false);
 
   // *********** FORM VALUES ***********
   const initialValues = { user: "", password: "" };
@@ -110,16 +111,19 @@ const SigninProvider = ({ children }) => {
 
   // *********** SUBMIT FORM :: on isSubmit true ***********
   useEffect(() => {
-    if (Object.keys(socialUser).length) {
+    setSignInLoader(true);
+    if (Object.keys(socialUser).length > 0) {
       asyncSigninSocialAccount();
     } else {
       if (Object.keys(formErrors).length === 0 && isSubmit) {
         asyncSignin();
       }
     }
+    setSignInLoader(false);
   }, [formErrors, formValues, isSubmit, navigate, socialUser]);
 
   const value = {
+    signInLoader,
     formValues,
     formErrors,
     handleSubmit,

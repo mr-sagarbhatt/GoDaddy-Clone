@@ -376,6 +376,10 @@
 }
 @include media-breakpoint-up(xxl) {
   .left-items {
+    .nav-item {
+      display: flex !important;
+      flex-shrink: 0 !important;
+    }
     .nav-link::after {
       display: none;
     }

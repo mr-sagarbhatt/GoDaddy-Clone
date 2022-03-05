@@ -119,6 +119,10 @@ $grid-breakpoints: (
   box-sizing: border-box !important;
 }
 
+::selection {
+  background-color: #a6fef8 !important;
+}
+
 body {
   -webkit-font-smoothing: antialiased !important;
   margin: 0 !important;

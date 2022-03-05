@@ -1,6 +1,8 @@
 const DiscountDomain = require("../domains/discount.domain");
 const express = require("express");
 const router = express.Router();
+const verifyToken = require("../authentication/verifyToken");
+const { authPage } = require("../authentication/authorization");
 
 class DiscountController {
   // *********** GET ALL DISCOUNTS ***********
@@ -38,9 +40,24 @@ class DiscountController {
 // *********** DISCOUNT ROUTES ***********
 router.get("/", DiscountController.getAllDiscounts);
 router.get("/:productId", DiscountController.getProductDiscounts);
-router.post("/", DiscountController.createDiscount);
-router.put("/:discountId", DiscountController.updateDiscount);
-router.delete("/:discountId", DiscountController.deleteDiscount);
-router.put("/activate/:discountId", DiscountController.activateDiscount);
+router.post("/", verifyToken, authPage([1]), DiscountController.createDiscount);
+router.put(
+  "/:discountId",
+  verifyToken,
+  authPage([1]),
+  DiscountController.updateDiscount
+);
+router.delete(
+  "/:discountId",
+  verifyToken,
+  authPage([1]),
+  DiscountController.deleteDiscount
+);
+router.put(
+  "/activate/:discountId",
+  verifyToken,
+  authPage([1]),
+  DiscountController.activateDiscount
+);
 
 module.exports = router;

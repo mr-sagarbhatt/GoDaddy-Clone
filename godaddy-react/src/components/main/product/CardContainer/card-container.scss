@@ -3,23 +3,35 @@
 .product-card-container {
   @include block-spacer(8vh, 4vh, 4vw);
 
+  .no-products {
+    font-size: 2rem;
+    padding: 3rem;
+    // font-weight: bold !important;
+    border: 0.0625em solid #d4dbe0 !important;
+    color: $light-cyan !important;
+    text-align: center;
+  }
+
   .card-group {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     .product-card {
       margin: 0;
       position: relative;
-      border: 0.0625em solid #d4dbe0;
+      border: 0.0625em solid #d4dbe0 !important;
       padding: 2vw;
-      flex-basis: 100%;
+      flex: 0 1 100%;
 
       .title {
         font-size: 1rem;
         margin: 1.5rem 0;
+        font-weight: bold;
       }
       .content {
         margin-bottom: 1.5rem;
+        height: 72px;
       }
       .price-content {
         margin-top: 1rem;
@@ -79,10 +91,10 @@
       }
 
       @include media-breakpoint-up(md) {
-        flex-basis: 50%;
+        flex: 0 1 50%;
       }
       @include media-breakpoint-up(xl) {
-        flex-basis: 25%;
+        flex: 0 1 25%;
       }
     }
   }

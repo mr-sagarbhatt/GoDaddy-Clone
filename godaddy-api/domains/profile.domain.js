@@ -3,7 +3,7 @@ const { validateUserProfile } = require("../utils/joi.validations");
 
 class ProfileDomain {
   // *********** GET USER PROFILE ***********
-  async getUserProfile(req, res) {
+  async getUserProfile(req, res, next) {
     try {
       const _id = parseInt(req.params.userId);
       const profile = await ProfileModel.find({
@@ -16,12 +16,12 @@ class ProfileDomain {
         res.json(`No results found!`);
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** UPDATE USER PROFILE ***********
-  async updateUserProfile(req, res) {
+  async updateUserProfile(req, res, next) {
     try {
       const _id = parseInt(req.params.userId);
       const data = req.body;
@@ -46,7 +46,7 @@ class ProfileDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

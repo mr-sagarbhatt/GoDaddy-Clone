@@ -4,7 +4,7 @@ const { validateSubCategory } = require("../utils/joi.validations");
 
 class CategoryDomain {
   // *********** GET ALL ACTIVE SUB CATEGORIES ***********
-  async getAllSubCategories(req, res) {
+  async getAllSubCategories(req, res, next) {
     try {
       const subCategory = await SubCategoryModel.find({ isActive: 1 }).populate(
         {
@@ -19,12 +19,12 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** CREATE SUB CATEGORY ***********
-  async createSubCategory(req, res) {
+  async createSubCategory(req, res, next) {
     try {
       const data = req.body;
       // * VALIDATE BODY DATA *
@@ -53,12 +53,12 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** UPDATE SUB CATEGORY ***********
-  async updateSubCategory(req, res) {
+  async updateSubCategory(req, res, next) {
     try {
       const _id = parseInt(req.params.subCategoryId);
       const data = req.body;
@@ -91,12 +91,12 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** DELETE/DEACTIVATE SUB CATEGORY ***********
-  async deleteSubCategory(req, res) {
+  async deleteSubCategory(req, res, next) {
     try {
       const _id = parseInt(req.params.subCategoryId);
       const subCategory = await SubCategoryModel.findByIdAndUpdate(
@@ -112,12 +112,12 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** ACTIVATE SUB CATEGORY ***********
-  async activateSubCategory(req, res) {
+  async activateSubCategory(req, res, next) {
     try {
       const _id = parseInt(req.params.subCategoryId);
       const subCategory = await SubCategoryModel.findByIdAndUpdate(
@@ -133,7 +133,7 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

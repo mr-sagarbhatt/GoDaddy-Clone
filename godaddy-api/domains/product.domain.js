@@ -5,7 +5,7 @@ const { validateProduct } = require("../utils/joi.validations");
 
 class ProductDomain {
   // *********** GET ALL ACTIVE PRODUCT ***********
-  async getAllProducts(req, res) {
+  async getAllProducts(req, res, next) {
     try {
       const product = await ProductModel.find({ isActive: 1 }).populate({
         path: "subCategoryId",
@@ -18,12 +18,12 @@ class ProductDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** CREATE PRODUCT ***********
-  async createProduct(req, res) {
+  async createProduct(req, res, next) {
     try {
       let data = req.body;
       // * VALIDATE BODY DATA *
@@ -77,12 +77,12 @@ class ProductDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** UPDATE PRODUCT ***********
-  async updateProduct(req, res) {
+  async updateProduct(req, res, next) {
     try {
       const _id = parseInt(req.params.productId);
       let data = req.body;
@@ -140,12 +140,12 @@ class ProductDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** DELETE/DEACTIVATE PRODUCT ***********
-  async deleteProduct(req, res) {
+  async deleteProduct(req, res, next) {
     try {
       const _id = parseInt(req.params.productId);
       const product = await ProductModel.findByIdAndUpdate(
@@ -161,12 +161,12 @@ class ProductDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** ACTIVATE PRODUCT ***********
-  async activateProduct(req, res) {
+  async activateProduct(req, res, next) {
     try {
       const _id = parseInt(req.params.productId);
       const product = await ProductModel.findByIdAndUpdate(
@@ -182,7 +182,7 @@ class ProductDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

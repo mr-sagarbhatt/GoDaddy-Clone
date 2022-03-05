@@ -6,21 +6,35 @@ const AutoIncrement = AutoIncrementFactory(connection);
 const paymentSchema = new Schema(
   {
     _id: Number,
-    transactionID: {
-      type: Number,
-      max: [15, `Transaction id  must be less than or equal to 15 digits.`],
+    transactionId: {
+      type: String,
+      max: [30, `Transaction id  must be less than or equal to 30 digits.`],
       required: [true, `Transaction id is required.`],
+      alias: "razorpayPaymentId",
+    },
+    razorpaySignature: {
+      type: String,
+      max: [
+        100,
+        `Razorpay signature must be less than or equal to 100 digits.`,
+      ],
+      required: [true, `Razorpay signature is required.`],
+    },
+    razorpayOrderId: {
+      type: String,
+      max: [30, `Razorpay order id must be less than or equal to 30 digits.`],
+      required: [true, `Razorpay order id is required.`],
     },
     amount: {
       type: Number,
       required: [true, `Amount is required.`],
       min: [0, `Amount must be greater than or equal to 0.`],
     },
-    type: {
+    method: {
       type: String,
-      alias: "paymentType",
-      max: [20, `Payment type must be less than or equal to 20.`],
-      required: [true, `Payment type is required.`],
+      alias: "paymentMethod",
+      max: [20, `Payment method must be less than or equal to 20.`],
+      required: [true, `Payment method is required.`],
     },
     status: {
       type: Boolean,
@@ -29,6 +43,7 @@ const paymentSchema = new Schema(
     },
     orderNo: {
       type: String,
+      ref: "orderDetail",
       required: [true, `Order no is required.`],
       maxlength: [10, `Order no must be less than or equal to 10 characters.`],
       unique: [true, `Order no is already exists.`],

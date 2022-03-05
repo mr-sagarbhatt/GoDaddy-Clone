@@ -2,7 +2,7 @@ const UserDomain = require("../domains/users.domain");
 const express = require("express");
 const router = express.Router();
 const verifyToken = require("../authentication/verifyToken");
-const { authPage, authUser } = require("../authentication/authorization");
+const { authPage } = require("../authentication/authorization");
 
 class UserController {
   // *********** GET LOGGED USER ***********
@@ -95,18 +95,11 @@ router.get(
   authPage([1]),
   UserController.getAllCustomers
 );
-router.get(
-  "/:userId",
-  verifyToken,
-  authPage([1, 2]),
-  authUser([1]),
-  UserController.getUser
-);
+router.get("/:userId", verifyToken, authPage([1, 2]), UserController.getUser);
 router.delete(
   "/:userId",
   verifyToken,
   authPage([1, 2]),
-  authUser([1]),
   UserController.deleteUser
 );
 

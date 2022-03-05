@@ -3,7 +3,7 @@ const express = require("express");
 global.config = require("../authentication/global.config");
 // *********** AUTH MIDDLE WARES ***********
 const verifyToken = require("../authentication/verifyToken");
-const { authPage, authUser } = require("../authentication/authorization");
+const { authPage } = require("../authentication/authorization");
 
 // *********** ROUTES ***********
 const rolesRoutes = require("../controllers/roles.controller");
@@ -16,8 +16,8 @@ const categoryRoutes = require("../controllers/category.controller");
 const subCategoryRoutes = require("../controllers/subcategory.controller");
 const productRoutes = require("../controllers/product.controller");
 const billRoutes = require("../controllers/billing.controller");
-const orderRoutes = require("../controllers/order.controller");
 const cartRoutes = require("../controllers/cart.controller");
+const orderRoutes = require("../controllers/order.controller");
 
 // *********** ERROR MIDDLEWARE ***********
 const errorMiddleware = require("../middlewares/error");
@@ -30,22 +30,16 @@ module.exports = function (app) {
 
   app.use("/roles", rolesRoutes);
   app.use("/users", usersRoutes);
-  app.use(
-    "/profile",
-    verifyToken,
-    authPage([1, 2]),
-    authUser([1]),
-    profileRoutes
-  );
-  app.use("/discount", verifyToken, authPage([1]), discountRoutes);
-  app.use("/promo", verifyToken, authPage([1]), promoRoutes);
-  app.use("/service", verifyToken, authPage([1]), serviceRoutes);
-  app.use("/category", verifyToken, authPage([1]), categoryRoutes);
-  app.use("/subcategory", verifyToken, authPage([1]), subCategoryRoutes);
-  app.use("/product", verifyToken, authPage([1]), productRoutes);
-  app.use("/bill", verifyToken, authPage([1]), billRoutes);
-  app.use("/order", verifyToken, authPage([1]), orderRoutes);
-  app.use("/cart", verifyToken, authPage([1]), cartRoutes);
+  app.use("/profile", verifyToken, authPage([1, 2]), profileRoutes);
+  app.use("/discount", discountRoutes);
+  app.use("/promo", promoRoutes);
+  app.use("/service", serviceRoutes);
+  app.use("/category", categoryRoutes);
+  app.use("/subcategory", subCategoryRoutes);
+  app.use("/product", productRoutes);
+  app.use("/bill", billRoutes);
+  app.use("/cart", cartRoutes);
+  app.use("/order", orderRoutes);
 
   // *********** ERROR MIDDLEWARE ***********
   app.use(errorMiddleware);

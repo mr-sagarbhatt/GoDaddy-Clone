@@ -115,6 +115,7 @@ const faxRegex =
 const postalCodeRegex = /^[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3}$/;
 
 function validateUserProfile(user) {
+  // *********** VALIDATE USER PROFILE : YUP ***********
   const joiSchema = Joi.object({
     firstName: Joi.string()
       .trim()
@@ -230,19 +231,13 @@ function validatePromo(promo) {
       "string.empty": `Description cannot be an empty.`,
       "string.max": `Description must be less than or equal to {#limit} characters.`,
     }),
-    percentage: Joi.number()
-      .integer()
-      .positive()
-      .min(1)
-      .max(100)
-      .required()
-      .messages({
-        "number.base": `Promo percentage must be a type of number.`,
-        "number.empty": `Promo percentage cannot be an empty.`,
-        "number.min": `Promo percentage must be greater than or equal to {#limit}.`,
-        "number.max": `Promo percentage must be less than or equal to {#limit}.`,
-        "any.required": `Promo percentage is required.`,
-      }),
+    amount: Joi.number().integer().positive().min(1).required().messages({
+      "number.base": `Promo amount must be a type of number.`,
+      "number.empty": `Promo amount cannot be an empty.`,
+      "number.min": `Promo amount must be greater than or equal to {#limit}.`,
+      "number.max": `Promo amount must be less than or equal to {#limit}.`,
+      "any.required": `Promo amount is required.`,
+    }),
     startTime: Joi.date().greater("now").required().messages({
       "date.base": `Promo start time must be a type of date.`,
       "date.empty": `Promo start time cannot be an empty.`,
@@ -456,6 +451,7 @@ function validateCartItems(cart) {
       "number.empty": `Discount id cannot be an empty.`,
       "number.integer": `Discount id must be positive integer.`,
       "number.positive": `Discount id must be positive integer.`,
+      "any.required": `Discount id is required.`,
     }),
   });
   return joiSchema.validate(cart);
@@ -490,18 +486,29 @@ function validateOrder(order) {
 // *********** VALIDATE PAYMENT ***********
 function validatePayment(payment) {
   const joiSchema = Joi.object({
-    transactionId: Joi.number().max(15).positive().required().messages({
-      "number.base": `Transaction id must be a type of number.`,
-      "number.empty": `Transaction id cannot be an empty.`,
-      "number.max": `Transaction id must be less than or equal to {#limit} digits.`,
-      "number.positive": `Transaction id must be positive integer.`,
+    transactionId: Joi.string().max(30).required().messages({
+      "string.base": `Transaction id must be a type of string.`,
+      "string.empty": `Transaction id cannot be an empty.`,
+      "string.max": `Transaction id must be less than or equal to {#limit} digits.`,
       "any.required": `Transaction id is required.`,
     }),
-    type: Joi.string().trim().required().messages({
-      "string.base": `Payment type must be a type of string.`,
-      "string.empty": `Payment type cannot be an empty.`,
-      "string.max": `Payment type must be less than or equal to {#limit}.`,
-      "any.required": `Payment type is required.`,
+    razorpaySignature: Joi.string().max(100).required().messages({
+      "string.base": `Razorpay signature must be a type of string.`,
+      "string.empty": `Razorpay signature cannot be an empty.`,
+      "string.max": `Razorpay signature must be less than or equal to {#limit} digits.`,
+      "any.required": `Razorpay signature is required.`,
+    }),
+    razorpayOrderId: Joi.string().max(30).required().messages({
+      "string.base": `Razorpay order id must be a type of string.`,
+      "string.empty": `Razorpay order id cannot be an empty.`,
+      "string.max": `Razorpay order id must be less than or equal to {#limit} digits.`,
+      "any.required": `Razorpay order id is required.`,
+    }),
+    method: Joi.string().trim().required().messages({
+      "string.base": `Payment method must be a type of string.`,
+      "string.empty": `Payment method cannot be an empty.`,
+      "string.max": `Payment method must be less than or equal to {#limit}.`,
+      "any.required": `Payment method is required.`,
     }),
     amount: Joi.number().min(0).positive().required().messages({
       "number.base": `Amount must be a type of number.`,
@@ -509,6 +516,9 @@ function validatePayment(payment) {
       "number.min": `Amount must be less than or equal to {#limit}.`,
       "number.positive": `Amount must be positive integer.`,
       "any.required": `Amount is required.`,
+    }),
+    status: Joi.boolean().messages({
+      "boolean.base": `Status must be a type of boolean.`,
     }),
     orderNo: Joi.string().max(10).required().messages({
       "string.base": `Order no must be a type of string.`,

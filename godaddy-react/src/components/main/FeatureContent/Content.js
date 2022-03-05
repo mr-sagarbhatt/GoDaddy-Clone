@@ -2,7 +2,6 @@ import "./feature-content.scss";
 
 const Content = (data) => {
   const { title, subtitle, content, contentImage, btnText } = data.data;
-  console.log(title, subtitle, content, contentImage, btnText);
   return (
     <>
       <div className='item'>

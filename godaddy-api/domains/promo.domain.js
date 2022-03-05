@@ -4,7 +4,7 @@ const { getRandomPromoCode } = require("../utils/functions");
 
 class DiscountDomain {
   // *********** GET ALL ACTIVE PROMOS ***********
-  async getAllPromos(req, res) {
+  async getAllPromos(req, res, next) {
     try {
       const promo = await PromoModel.find({ isActive: 1 });
       if (promo.length > 0) {
@@ -15,12 +15,12 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** CREATE PROMO ***********
-  async createPromo(req, res) {
+  async createPromo(req, res, next) {
     try {
       let data = req.body;
       data = {
@@ -48,12 +48,12 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** UPDATE PROMO ***********
-  async updatePromo(req, res) {
+  async updatePromo(req, res, next) {
     try {
       const _id = parseInt(req.params.promoId);
       const data = req.body;
@@ -82,12 +82,12 @@ class DiscountDomain {
         }
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** DELETE/DEACTIVATE PROMO ***********
-  async deletePromo(req, res) {
+  async deletePromo(req, res, next) {
     try {
       const _id = parseInt(req.params.promoId);
       const promo = await PromoModel.findByIdAndUpdate(
@@ -103,12 +103,12 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** ACTIVATE PROMO ***********
-  async activatePromo(req, res) {
+  async activatePromo(req, res, next) {
     try {
       const _id = parseInt(req.params.promoId);
       const promo = await PromoModel.findByIdAndUpdate(
@@ -124,7 +124,7 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

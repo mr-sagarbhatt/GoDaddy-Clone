@@ -47,6 +47,7 @@ const orderItemSchema = new Schema(
     },
     orderNo: {
       type: String,
+      ref: "orderDetail",
       required: [true, `Order no is required.`],
       maxlength: [10, `Order no must be less than or equal to 10.`],
     },

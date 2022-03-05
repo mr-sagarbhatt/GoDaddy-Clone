@@ -1,6 +1,9 @@
 const CartDomain = require("../domains/cart.domain");
 const express = require("express");
 const router = express.Router();
+// *********** AUTH MIDDLE WARES ***********
+const verifyToken = require("../authentication/verifyToken");
+const { authPage } = require("../authentication/authorization");
 
 class CartController {
   // *********** GET USER CART ***********
@@ -31,10 +34,20 @@ class CartController {
 }
 
 // *********** CART  ROUTES ***********
-router.get("/", CartController.getUserCart);
-router.post("/", CartController.addToCart);
-router.put("/:cartId", CartController.updateCartItem);
-router.delete("/:cartId", CartController.deleteCartItem);
-router.delete("/", CartController.deleteCart);
+router.get("/", verifyToken, authPage([1, 2]), CartController.getUserCart);
+router.post("/", verifyToken, authPage([1, 2]), CartController.addToCart);
+router.put(
+  "/:cartId",
+  verifyToken,
+  authPage([1, 2]),
+  CartController.updateCartItem
+);
+router.delete(
+  "/:cartId",
+  verifyToken,
+  authPage([1, 2]),
+  CartController.deleteCartItem
+);
+router.delete("/", verifyToken, authPage([1, 2]), CartController.deleteCart);
 
 module.exports = router;

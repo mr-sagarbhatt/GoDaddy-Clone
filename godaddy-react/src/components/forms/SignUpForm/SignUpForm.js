@@ -2,10 +2,12 @@ import "./signup-form.scss";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { useSignupContext } from "../../../contexts/SignupContext";
+import PageLoader from "../../Loader/PageLoader";
+
 const zxcvbn = require("zxcvbn");
 
 const SignUpForm = () => {
-  const { formValues, formErrors, handleChange, handleSubmit } =
+  const { signUpLoader, formValues, formErrors, handleChange, handleSubmit } =
     useSignupContext();
 
   // *********** HIDE/SHOW PASSWORD :: password or text ***********
@@ -48,94 +50,98 @@ const SignUpForm = () => {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        className='needs-validation sign-up-form'
-        noValidate
-      >
-        <div className='invalid-feedback'>{formErrors.extras}</div>
-        <div className='form-floating position-relative'>
-          <input
-            type='text'
-            className='form-control'
-            id='email'
-            placeholder='Email'
-            name='email'
-            value={formValues.email}
-            onChange={handleChange}
-            autoFocus
-          />
-          <div className='invalid-feedback'>{formErrors.email}</div>
-          <label htmlFor='email' className='form-label'>
-            Email <span className='text-danger'>*</span>
-          </label>
-        </div>
-        <div className='form-floating  position-relative'>
-          <input
-            type='text'
-            className='form-control'
-            id='userName'
-            placeholder='Username'
-            name='userName'
-            value={formValues.userName}
-            onChange={handleChange}
-          />
-          <div className='invalid-feedback'>{formErrors.userName}</div>
-          <label htmlFor='username' className='form-label'>
-            Username <span className='text-danger'>*</span>
-          </label>
-        </div>
-        <div className='form-floating  position-relative password'>
-          <input
-            type={inputType}
-            className='form-control passField'
-            id='password'
-            placeholder='Password'
-            name='password'
-            value={formValues.password}
-            onChange={(e) => {
-              handleChange(e);
-              passwordStrength(e);
-            }}
-          />
-          <div className='invalid-feedback'>{formErrors.password}</div>
-          <div className='password-show' onClick={changeInputType}>
-            {inputType === "password" ? "Show" : "Hide"}
+      {signUpLoader ? (
+        <PageLoader></PageLoader>
+      ) : (
+        <form
+          onSubmit={handleSubmit}
+          className='needs-validation sign-up-form'
+          noValidate
+        >
+          <div className='invalid-feedback'>{formErrors.extras}</div>
+          <div className='form-floating position-relative'>
+            <input
+              type='text'
+              className='form-control'
+              id='email'
+              placeholder='Email'
+              name='email'
+              value={formValues.email}
+              onChange={handleChange}
+              autoFocus
+            />
+            <div className='invalid-feedback'>{formErrors.email}</div>
+            <label htmlFor='email' className='form-label'>
+              Email <span className='text-danger'>*</span>
+            </label>
           </div>
-          <div className='password-card'>
-            <div className='password-msg'>
-              <span className='ps-2 pe-3'>
-                <FaCheck fontSize={17} color={"grey"}></FaCheck>
-              </span>
-              Be at least 9 characters
+          <div className='form-floating  position-relative'>
+            <input
+              type='text'
+              className='form-control'
+              id='userName'
+              placeholder='Username'
+              name='userName'
+              value={formValues.userName}
+              onChange={handleChange}
+            />
+            <div className='invalid-feedback'>{formErrors.userName}</div>
+            <label htmlFor='username' className='form-label'>
+              Username <span className='text-danger'>*</span>
+            </label>
+          </div>
+          <div className='form-floating  position-relative password'>
+            <input
+              type={inputType}
+              className='form-control passField'
+              id='password'
+              placeholder='Password'
+              name='password'
+              value={formValues.password}
+              onChange={(e) => {
+                handleChange(e);
+                passwordStrength(e);
+              }}
+            />
+            <div className='invalid-feedback'>{formErrors.password}</div>
+            <div className='password-show' onClick={changeInputType}>
+              {inputType === "password" ? "Show" : "Hide"}
             </div>
-            <div
-              className='password-strength'
-              data-password-score={passwordScore || 0}
-            >
-              {strengthMsg}
-            </div>
-            <div className='progress'>
+            <div className='password-card'>
+              <div className='password-msg'>
+                <span className='ps-2 pe-3'>
+                  <FaCheck fontSize={17} color={"grey"}></FaCheck>
+                </span>
+                Be at least 9 characters
+              </div>
               <div
-                className='progress-bar bg-danger'
-                style={{ minWidth: "20%" }}
-                role='progressbar'
-                aria-valuenow='20'
-                aria-valuemin='20'
-                aria-valuemax='100'
-              ></div>
+                className='password-strength'
+                data-password-score={passwordScore || 0}
+              >
+                {strengthMsg}
+              </div>
+              <div className='progress'>
+                <div
+                  className='progress-bar bg-danger'
+                  style={{ minWidth: "20%" }}
+                  role='progressbar'
+                  aria-valuenow='20'
+                  aria-valuemin='20'
+                  aria-valuemax='100'
+                ></div>
+              </div>
             </div>
+            <label htmlFor='password' className='form-label'>
+              Password <span className='text-danger'>*</span>
+            </label>
           </div>
-          <label htmlFor='password' className='form-label'>
-            Password <span className='text-danger'>*</span>
-          </label>
-        </div>
-        <div className='btn-submit w-100'>
-          <button type='submit' className='btn btn-dark w-100'>
-            Create Account
-          </button>
-        </div>
-      </form>
+          <div className='btn-submit w-100'>
+            <button type='submit' className='btn btn-dark w-100'>
+              Create Account
+            </button>
+          </div>
+        </form>
+      )}
     </>
   );
 };

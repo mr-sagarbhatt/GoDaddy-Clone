@@ -27,3 +27,5 @@ require("./startup/models")();
 app.listen(port, () => {
   serverLogging.info(`Server started on port:${port}`);
 });
+
+module.exports = app;

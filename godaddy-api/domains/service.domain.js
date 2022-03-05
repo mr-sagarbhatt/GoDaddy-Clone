@@ -3,7 +3,7 @@ const { validateService } = require("../utils/joi.validations");
 
 class ServiceDomain {
   // *********** GET ALL ACTIVE SERVICES ***********
-  async getAllServices(req, res) {
+  async getAllServices(req, res, next) {
     try {
       const service = await ServiceModel.find({ isActive: 1 });
       if (service.length > 0) {
@@ -14,12 +14,12 @@ class ServiceDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** CREATE SERVICE ***********
-  async createService(req, res) {
+  async createService(req, res, next) {
     try {
       const data = req.body;
       // * VALIDATE BODY DATA *
@@ -40,12 +40,12 @@ class ServiceDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** UPDATE SERVICE ***********
-  async updateService(req, res) {
+  async updateService(req, res, next) {
     try {
       const _id = parseInt(req.params.serviceId);
       const data = req.body;
@@ -70,12 +70,12 @@ class ServiceDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** DELETE SERVICE ***********
-  async deleteService(req, res) {
+  async deleteService(req, res, next) {
     try {
       const _id = parseInt(req.params.serviceId);
       const service = await ServiceModel.findByIdAndUpdate(
@@ -91,12 +91,12 @@ class ServiceDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** ACTIVATE SERVICE ***********
-  async activateService(req, res) {
+  async activateService(req, res, next) {
     try {
       const _id = parseInt(req.params.serviceId);
       const service = await ServiceModel.findByIdAndUpdate(
@@ -112,7 +112,7 @@ class ServiceDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

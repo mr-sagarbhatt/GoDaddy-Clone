@@ -6,14 +6,16 @@ import { SigninProvider } from "../../contexts/SigninContext";
 const SignIn = () => {
   return (
     <SigninProvider>
-      <section className='signin'>
-        {/* //*********** SIGNIN CARD *********** */}
-        <SigninCard></SigninCard>
+      <>
+        <section className='signin'>
+          {/* //*********** SIGNIN CARD *********** */}
+          <SigninCard></SigninCard>
+        </section>
         {/* //*********** FOOTER :: COPYRIGHTS *********** */}
-        <div className='copyrights'>
+        <div className='signin-copyrights'>
           <Copyrights></Copyrights>
         </div>
-      </section>
+      </>
     </SigninProvider>
   );
 };

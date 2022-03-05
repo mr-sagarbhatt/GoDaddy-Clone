@@ -1,6 +1,7 @@
 import "./cart-header.scss";
 import Icon from "../../../../assets/images/svg/GoDaddy-Icon-Black-Logo.wine.svg";
 import Logo from "../../../../assets/images/svg/GoDaddy-Black-Logo.wine.svg";
+import { Link } from "react-router-dom";
 
 const CartHeader = () => {
   return (
@@ -8,7 +9,7 @@ const CartHeader = () => {
     <div className='cart-header'>
       {/* <!-- logo --> */}
       <div className='logo-container'>
-        <a href='#'>
+        <Link to='/'>
           <img
             className='icon'
             src={Icon}
@@ -24,7 +25,7 @@ const CartHeader = () => {
             width='166px'
           />
           <span className='country-name d-none'>India</span>
-        </a>
+        </Link>
       </div>
       {/* <!-- contact-us --> */}
     </div>

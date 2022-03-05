@@ -4,7 +4,7 @@ const { validateDiscount } = require("../utils/joi.validations");
 
 class DiscountDomain {
   // *********** GET ALL ACTIVE DISCOUNTS ***********
-  async getAllDiscounts(req, res) {
+  async getAllDiscounts(req, res, next) {
     try {
       const discount = await DiscountModel.find({ isActive: 1 }).populate({
         path: "productId",
@@ -17,12 +17,12 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** GET DISCOUNTS BY PRODUCT ***********
-  async getProductDiscounts(req, res) {
+  async getProductDiscounts(req, res, next) {
     try {
       const productId = req.params.productId;
       const discount = await DiscountModel.find({
@@ -39,12 +39,12 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** CREATE DISCOUNT ***********
-  async createDiscount(req, res) {
+  async createDiscount(req, res, next) {
     try {
       const data = req.body;
       // * VALIDATE BODY DATA *
@@ -75,12 +75,12 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** UPDATE DISCOUNT ***********
-  async updateDiscount(req, res) {
+  async updateDiscount(req, res, next) {
     try {
       const _id = parseInt(req.params.discountId);
       const data = req.body;
@@ -119,12 +119,12 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** DELETE/DEACTIVATE DISCOUNT ***********
-  async deleteDiscount(req, res) {
+  async deleteDiscount(req, res, next) {
     try {
       const _id = parseInt(req.params.discountId);
       const discount = await DiscountModel.findByIdAndUpdate(
@@ -140,12 +140,12 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** ACTIVATE DISCOUNT ***********
-  async activateDiscount(req, res) {
+  async activateDiscount(req, res, next) {
     try {
       const _id = parseInt(req.params.discountId);
       const discount = await DiscountModel.findByIdAndUpdate(
@@ -161,7 +161,7 @@ class DiscountDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

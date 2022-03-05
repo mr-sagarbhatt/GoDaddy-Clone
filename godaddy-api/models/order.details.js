@@ -30,6 +30,7 @@ const orderDetailsSchema = new Schema(
       type: Boolean, // ? completed
       required: [true, `Order status is required.`],
       default: 0,
+      alias: "isCompleted",
     },
     userId: {
       type: Number,

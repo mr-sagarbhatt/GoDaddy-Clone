@@ -29,12 +29,12 @@ const promoSchema = new Schema(
       ],
       alias: "description",
     },
-    percentage: {
+    amount: {
       type: Number,
-      alias: "promoPercentage",
-      required: [true, `Promo percentage is required.`],
-      min: [1, `Promo percentage must be greater than or equal to 1.`],
-      max: [100, `Promo percentage must be less than or equal to 100.`],
+      alias: "promoAmount",
+      required: [true, `Promo amount is required.`],
+      min: [1, `Promo amount must be greater than or equal to 1.`],
+      // max: [100, `Promo amount must be less than or equal to 100.`],
     },
     startTime: {
       type: Date,

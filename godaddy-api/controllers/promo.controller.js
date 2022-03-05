@@ -1,6 +1,8 @@
 const PromoDomain = require("../domains/promo.domain");
 const express = require("express");
 const router = express.Router();
+const verifyToken = require("../authentication/verifyToken");
+const { authPage } = require("../authentication/authorization");
 
 class PromoController {
   // *********** GET ALL PROMOS ***********
@@ -32,9 +34,24 @@ class PromoController {
 
 // *********** PROMO ROUTES ***********
 router.get("/", PromoController.getAllPromos);
-router.post("/", PromoController.createPromo);
-router.put("/:promoId", PromoController.updatePromo);
-router.delete("/:promoId", PromoController.deletePromo);
-router.put("/activate/:promoId", PromoController.activatePromo);
+router.post("/", verifyToken, authPage([1]), PromoController.createPromo);
+router.put(
+  "/:promoId",
+  verifyToken,
+  authPage([1]),
+  PromoController.updatePromo
+);
+router.delete(
+  "/:promoId",
+  verifyToken,
+  authPage([1]),
+  PromoController.deletePromo
+);
+router.put(
+  "/activate/:promoId",
+  verifyToken,
+  authPage([1]),
+  PromoController.activatePromo
+);
 
 module.exports = router;

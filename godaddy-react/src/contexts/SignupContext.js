@@ -16,6 +16,7 @@ const useSignupContext = () => useContext(SignupContext);
 const SignupProvider = ({ children }) => {
   const navigate = useNavigate();
   const { setUserToken } = useAuthContext();
+  const [signUpLoader, setSignUpLoader] = useState(false);
 
   // *********** FORM VALUES ***********
   const initialValues = { email: "", userName: "", password: "" };
@@ -139,6 +140,7 @@ const SignupProvider = ({ children }) => {
 
   // *********** SUBMIT FORM :: on isSubmit true ***********
   useEffect(() => {
+    setSignUpLoader(true);
     if (Object.keys(socialUser).length > 0) {
       asyncCreateSocialAccount();
     } else {
@@ -146,9 +148,11 @@ const SignupProvider = ({ children }) => {
         asyncCreateAccount();
       }
     }
+    setSignUpLoader(false);
   }, [formErrors, formValues, isSubmit, navigate, socialUser]);
 
   const value = {
+    signUpLoader,
     formValues,
     formErrors,
     handleChange,

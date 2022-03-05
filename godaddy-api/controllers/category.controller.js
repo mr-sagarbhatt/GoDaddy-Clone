@@ -1,6 +1,8 @@
 const CategoryDomain = require("../domains/category.domain");
 const express = require("express");
 const router = express.Router();
+const verifyToken = require("../authentication/verifyToken");
+const { authPage } = require("../authentication/authorization");
 
 class CategoryController {
   // *********** GET ALL CATEGORIES ***********
@@ -32,9 +34,24 @@ class CategoryController {
 
 // *********** CATEGORY ROUTES ***********
 router.get("/", CategoryController.getAllCategories);
-router.post("/", CategoryController.createCategory);
-router.put("/:categoryId", CategoryController.updateCategory);
-router.delete("/:categoryId", CategoryController.deleteCategory);
-router.put("/activate/:categoryId", CategoryController.activateCategory);
+router.post("/", verifyToken, authPage([1]), CategoryController.createCategory);
+router.put(
+  "/:categoryId",
+  verifyToken,
+  authPage([1]),
+  CategoryController.updateCategory
+);
+router.delete(
+  "/:categoryId",
+  verifyToken,
+  authPage([1]),
+  CategoryController.deleteCategory
+);
+router.put(
+  "/activate/:categoryId",
+  verifyToken,
+  authPage([1]),
+  CategoryController.activateCategory
+);
 
 module.exports = router;

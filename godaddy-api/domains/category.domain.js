@@ -3,7 +3,7 @@ const { validateCategory } = require("../utils/joi.validations");
 
 class CategoryDomain {
   // *********** GET ALL ACTIVE CATEGORIES ***********
-  async getAllCategories(req, res) {
+  async getAllCategories(req, res, next) {
     try {
       const category = await CategoryModel.find({ isActive: 1 }).populate({
         path: "serviceId",
@@ -16,12 +16,12 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** CREATE CATEGORY ***********
-  async createCategory(req, res) {
+  async createCategory(req, res, next) {
     try {
       const data = req.body;
       // * VALIDATE BODY DATA *
@@ -42,12 +42,12 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** UPDATE CATEGORY ***********
-  async updateCategory(req, res) {
+  async updateCategory(req, res, next) {
     try {
       const _id = parseInt(req.params.categoryId);
       const data = req.body;
@@ -72,12 +72,12 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** DELETE CATEGORY ***********
-  async deleteCategory(req, res) {
+  async deleteCategory(req, res, next) {
     try {
       const _id = parseInt(req.params.categoryId);
       const category = await CategoryModel.findByIdAndUpdate(
@@ -93,12 +93,12 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
   // *********** ACTIVATE CATEGORY ***********
-  async activateCategory(req, res) {
+  async activateCategory(req, res, next) {
     try {
       const _id = parseInt(req.params.categoryId);
       const category = await CategoryModel.findByIdAndUpdate(
@@ -114,7 +114,7 @@ class CategoryDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

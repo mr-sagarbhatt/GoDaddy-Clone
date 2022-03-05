@@ -5,10 +5,12 @@ import {
   formatDataWithImage,
 } from "../../../utils/Contentful";
 import Content from "./Content";
+import PageLoader from "../../Loader/PageLoader";
 
 const FeatureContent = () => {
   // * STORE CONTENT
   const [featuredContent, setFeaturedContent] = useState([]);
+  const [contentLoader, setContentLoader] = useState(false);
 
   // * GET CONTENT FROM CONTENTFUL
   const getContentData = async () => {
@@ -26,16 +28,22 @@ const FeatureContent = () => {
   };
 
   useEffect(() => {
+    setContentLoader(true);
     getContentData();
+    setContentLoader(false);
   }, []);
 
   return (
     // <!-- feature-content -->
-    <div className='feature-content'>
-      {featuredContent.map((item, index) => (
-        <Content data={item} key={index}></Content>
-      ))}
-      {/* <div className='item'>
+    <>
+      {contentLoader ? (
+        <PageLoader></PageLoader>
+      ) : (
+        <div className='feature-content'>
+          {featuredContent.map((item, index) => (
+            <Content data={item} key={index}></Content>
+          ))}
+          {/* <div className='item'>
         <div className='image'>
           <img
             className='img-fluid'
@@ -113,7 +121,9 @@ const FeatureContent = () => {
           </div>
         </div>
       </div> */}
-    </div>
+        </div>
+      )}
+    </>
   );
 };
 

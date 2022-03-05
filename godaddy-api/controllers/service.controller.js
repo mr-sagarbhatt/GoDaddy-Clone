@@ -1,6 +1,8 @@
 const ServiceDomain = require("../domains/service.domain");
 const express = require("express");
 const router = express.Router();
+const verifyToken = require("../authentication/verifyToken");
+const { authPage } = require("../authentication/authorization");
 
 class ServiceController {
   // *********** GET ALL SERVICES ***********
@@ -32,9 +34,24 @@ class ServiceController {
 
 // *********** SERVICE ROUTES ***********
 router.get("/", ServiceController.getAllServices);
-router.post("/", ServiceController.createService);
-router.put("/:serviceId", ServiceController.updateService);
-router.delete("/:serviceId", ServiceController.deleteService);
-router.put("/activate/:serviceId", ServiceController.activateService);
+router.post("/", verifyToken, authPage([1]), ServiceController.createService);
+router.put(
+  "/:serviceId",
+  verifyToken,
+  authPage([1]),
+  ServiceController.updateService
+);
+router.delete(
+  "/:serviceId",
+  verifyToken,
+  authPage([1]),
+  ServiceController.deleteService
+);
+router.put(
+  "/activate/:serviceId",
+  verifyToken,
+  authPage([1]),
+  ServiceController.activateService
+);
 
 module.exports = router;

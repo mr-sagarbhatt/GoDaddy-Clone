@@ -12,9 +12,17 @@ class CartDomain {
   async getUserCart(req, res) {
     try {
       const userId = req.decoded._id;
-      const cart = await CartItemsModel.find({ userId }).populate({
-        path: "productId",
-      });
+      const cart = await CartItemsModel.find({ userId }).populate([
+        {
+          path: "productId",
+        },
+        {
+          path: "discountId",
+        },
+        {
+          path: "userId",
+        },
+      ]);
       if (cart.length > 0) {
         res.send(cart);
       } else {
@@ -23,7 +31,7 @@ class CartDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
@@ -42,9 +50,25 @@ class CartDomain {
       const productId = await ProductModel.findOne({
         _id: data.productId,
       });
-      const discountId = await DiscountModel.findOne({
-        _id: data.discountId,
+      let discountId;
+      if (data.discountId) {
+        discountId = await DiscountModel.findOne({
+          _id: data.discountId,
+        });
+      } else {
+        discountId = await DiscountModel.findOne({
+          productId: data.productId,
+        });
+      }
+      const cartItem = await CartItemsModel.findOne({
+        productId: data.productId,
+        userId,
       });
+      if (cartItem) {
+        return res.status(400).json({
+          message: `Product is already added in your cart!`,
+        });
+      }
       // * PRODUCT PRICE *
       const price = productId.price;
       // * CHECK IF USER ID EXISTS *
@@ -52,27 +76,31 @@ class CartDomain {
         // * CHECK IF PRODUCT ID EXISTS *
         if (productId) {
           // * CHECK IF DISCOUNT ID EXISTS *
-          if (discountId) {
-            // * UPDATED PRICE *
-            const calcValue = (productId.price * discountId.percentage) / 100;
-            const updatedPrice = price - calcValue;
-            data = {
-              ...data,
-              userId,
-              price,
-              updatedPrice,
-            };
-          } else {
-            // * UPDATED PRICE *
-            const price = productId.price;
-            const updatedPrice = price;
-            data = {
-              ...data,
-              userId,
-              price,
-              updatedPrice,
-            };
-          }
+          // if (discountId) {
+          // * UPDATED PRICE *
+          const totalPrice = price * discountId.months;
+          const calcValue = (totalPrice * discountId.percentage) / 100;
+          const updatedPrice = totalPrice - calcValue;
+          // const calcValue = (productId.price * discountId.percentage) / 100;
+          // const updatedPrice = price - calcValue;
+          data = {
+            ...data,
+            userId,
+            price: totalPrice,
+            updatedPrice,
+            discountId: discountId._id,
+          };
+          // } else {
+          //   // * UPDATED PRICE *
+          //   const price = productId.price;
+          //   const updatedPrice = price;
+          //   data = {
+          //     ...data,
+          //     userId,
+          //     price,
+          //     updatedPrice,
+          //   };
+          // }
           // * SAVE CART DETAILS *
           const cart = new CartItemsModel(data);
           const saveCart = await cart.save();
@@ -83,6 +111,11 @@ class CartDomain {
               message: "Please try again later!",
             });
           }
+          // } else {
+          //   return res.status(400).json({
+          //     message: `Discount Not found!`,
+          //   });
+          // }
         } else {
           return res.status(400).json({
             message: `Product Not found!`,
@@ -94,7 +127,7 @@ class CartDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
       res.send(err);
     }
   }
@@ -105,6 +138,8 @@ class CartDomain {
       const _id = parseInt(req.params.cartId);
       const userId = await req.decoded._id;
       let data = req.body;
+      console.log("data");
+      console.log(data);
       // * VALIDATE BODY DATA *
       const { error } = updateCartItems(data);
       if (error) {
@@ -121,43 +156,56 @@ class CartDomain {
       const price = productId.price;
       // * CHECK IF USER ID EXISTS *
       if (userId) {
-        // * CHECK IF DISCOUNT ID EXISTS *
-        if (discountId) {
-          // * UPDATED PRICE *
-          const calcValue = (productId.price * discountId.percentage) / 100;
-          const updatedPrice = price - calcValue;
-          data = {
-            ...data,
-            userId,
-            price,
-            updatedPrice,
-          };
+        // * CHECK IF PRODUCT ID EXISTS *
+        if (productId) {
+          // * CHECK IF DISCOUNT ID EXISTS *
+          if (discountId) {
+            // * UPDATED PRICE *
+            const totalPrice = price * discountId.months;
+            const calcValue = (totalPrice * discountId.percentage) / 100;
+            const updatedPrice = totalPrice - calcValue;
+            data = {
+              ...data,
+              userId,
+              price: totalPrice,
+              updatedPrice,
+            };
+            // } else {
+            //   await CartItemsModel.findByIdAndUpdate(
+            //     { _id },
+            //     { $unset: { discountId: 1 } }
+            //   );
+            // // * UPDATED PRICE *
+            // const price = productId.price;
+            // const updatedPrice = price;
+            // data = {
+            //   ...data,
+            //   userId,
+            //   price,
+            //   updatedPrice,
+            // };
+
+            // * UPDATE CART DETAILS *
+            const cart = await CartItemsModel.findOneAndUpdate(
+              { _id },
+              { $set: data },
+              { new: 1, runValidators: true }
+            );
+            if (cart) {
+              res.send(cart);
+            } else {
+              res.status(400).json({
+                message: "Cart Not Found!",
+              });
+            }
+          } else {
+            return res.status(400).json({
+              message: `Product Not found!`,
+            });
+          }
         } else {
-          await CartItemsModel.findByIdAndUpdate(
-            { _id },
-            { $unset: { discountId: 1 } }
-          );
-          // * UPDATED PRICE *
-          const price = productId.price;
-          const updatedPrice = price;
-          data = {
-            ...data,
-            userId,
-            price,
-            updatedPrice,
-          };
-        }
-        // * UPDATE CART DETAILS *
-        const cart = await CartItemsModel.findOneAndUpdate(
-          { _id },
-          { $set: data },
-          { new: 1, runValidators: true }
-        );
-        if (cart) {
-          res.send(cart);
-        } else {
-          res.status(400).json({
-            message: "Cart Not Found!",
+          return res.status(400).json({
+            message: `Discount Not found!`,
           });
         }
       } else {
@@ -166,7 +214,7 @@ class CartDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
       res.send(err);
     }
   }
@@ -184,7 +232,7 @@ class CartDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 
@@ -204,7 +252,7 @@ class CartDomain {
         });
       }
     } catch (err) {
-      console.log(err);
+      next(err);
     }
   }
 }

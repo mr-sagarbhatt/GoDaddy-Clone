@@ -1,6 +1,8 @@
 const ProductDomain = require("../domains/product.domain");
 const express = require("express");
 const router = express.Router();
+const verifyToken = require("../authentication/verifyToken");
+const { authPage } = require("../authentication/authorization");
 
 class ProductController {
   // *********** GET ALL PRODUCTS ***********
@@ -32,9 +34,24 @@ class ProductController {
 
 // *********** PRODUCT ROUTES ***********
 router.get("/", ProductController.getAllProducts);
-router.post("/", ProductController.createProduct);
-router.put("/:productId", ProductController.updateProduct);
-router.delete("/:productId", ProductController.deleteProduct);
-router.put("/activate/:productId", ProductController.activateProduct);
+router.post("/", verifyToken, authPage([1]), ProductController.createProduct);
+router.put(
+  "/:productId",
+  verifyToken,
+  authPage([1]),
+  ProductController.updateProduct
+);
+router.delete(
+  "/:productId",
+  verifyToken,
+  authPage([1]),
+  ProductController.deleteProduct
+);
+router.put(
+  "/activate/:productId",
+  verifyToken,
+  authPage([1]),
+  ProductController.activateProduct
+);
 
 module.exports = router;
