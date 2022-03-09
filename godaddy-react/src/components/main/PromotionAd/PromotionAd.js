@@ -2,6 +2,7 @@ import "./promotion-ad.scss";
 import { FaTimesCircle, FaPlay, FaLessThanEqual } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import PageLoader from "../../Loader/PageLoader";
+import AdVideoImage from "../../../assets/images/img-in-hp-imc-campaign.jpg";
 
 const PromotionAd = () => {
   const modal = useRef(null);
@@ -43,7 +44,7 @@ const PromotionAd = () => {
               className='img-fluid'
               id='myImg'
               ref={img}
-              src='https://drive.google.com/uc?export=view&id=1RZhmKUns18sQYcQB968yVtwJzkhuy3g_'
+              src={AdVideoImage}
               alt='Northern Lights, Norway'
             />
             <div id='play' className='play' ref={play}>

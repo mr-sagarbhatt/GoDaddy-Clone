@@ -3,7 +3,7 @@
 .guides-section {
   @include block-spacer(8vh, 8vh, 0);
   position: relative;
-  background-image: url(https://drive.google.com/uc?export=view&id=1WYC5xJyL4xS97EAR2CeuwGWUzezxsA3c);
+  background-image: url("../../../assets/images/img-guide-row-portrait.jpg");
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -109,12 +109,12 @@
 @include media-breakpoint-up(md) {
   .guides-section {
     position: unset !important;
-    background-image: url(https://drive.google.com/uc?export=view&id=1YiqvMLLzeqzDYJ-IQMVTismKPFSsAxuz);
+    background-image: url("../../../assets/images/img-guide-row-tablet.jpg");
     background-position: center;
     min-height: 68vh;
 
     @include media-breakpoint-up(lg) {
-      background-image: url(https://drive.google.com/uc?export=view&id=1L8eri_TRWlBLRfDykhdz9hmoiIO6tKdL);
+      background-image: url("../../../assets/images/img-guide-row-landscape.jpg");
 
       .heading {
         font-size: 4rem;

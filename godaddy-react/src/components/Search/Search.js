@@ -4,6 +4,11 @@ import { useDomainContext } from "../../contexts/DomainContext";
 import { useState, useRef } from "react";
 import PageLoader from "../Loader/PageLoader";
 import Loader from "../Loader/Loader";
+import ComImage from "../../assets/images/svg/com.svg";
+import InImage from "../../assets/images/svg/in.svg";
+import GlobalImage from "../../assets/images/global.png";
+import OrgImage from "../../assets/images/svg/org.svg";
+import CoInImage from "../../assets/images/svg/co-in.svg";
 
 const Search = () => {
   const { domainLoader, domainInfo, fnCheckDomainAvailability } =
@@ -47,38 +52,23 @@ const Search = () => {
         '
         >
           <div className='com'>
-            <img
-              src='https://drive.google.com/uc?export=view&id=1Cnna6eFSwi1J4WJn5Ukbk7SfiLDNMPfA'
-              alt='.com'
-            />
+            <img src={ComImage} alt='.com' />
             <span>&#x20B9; 199.00*</span>
           </div>
           <div className='in'>
-            <img
-              src='https://drive.google.com/uc?export=view&id=1cQG0UK28_xesR4dqUUmaMldrZlEMh6pr'
-              alt='.in'
-            />
+            <img src={InImage} alt='.in' />
             <span>&#x20B9; 149.00*</span>
           </div>
           <div className='global'>
-            <img
-              src='https://drive.google.com/uc?export=view&id=1T0Zsjm442lJELG8wspplnYZG2r9lr6q4'
-              alt='.global'
-            />
+            <img src={GlobalImage} alt='.global' />
             <span>&#x20B9; 1,503.01*</span>
           </div>
           <div className='org d-lg-none d-xl-flex'>
-            <img
-              src='https://drive.google.com/uc?export=view&id=1HFVrDh5zg1vcjK9MURS470Hm3z53fPXH'
-              alt='.org'
-            />
+            <img src={OrgImage} alt='.org' />
             <span>&#x20B9; 99.00*</span>
           </div>
           <div className='co-in d-lg-none d-xxl-flex'>
-            <img
-              src='https://drive.google.com/uc?export=view&id=1dOa1x7J7hq8iiq-Y8gGkMP0oruJ6RXTp'
-              alt='.co-in'
-            />
+            <img src={CoInImage} alt='.co-in' />
             <span className='ps-2'>&#x20B9; 99.00*</span>
           </div>
         </div>

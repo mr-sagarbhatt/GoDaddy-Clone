@@ -1,5 +1,6 @@
 import "./guides-section.scss";
 import { FaSearch } from "react-icons/fa";
+import GuidesImage from "../../../assets/images/svg/GoDaddyGuidesLogo.svg";
 
 const GuidesSection = () => {
   return (
@@ -8,10 +9,7 @@ const GuidesSection = () => {
       <span className='pipe'>Samantha S.</span>
       <div className='guide-content'>
         <div className='logo'>
-          <img
-            src='https://drive.google.com/uc?export=view&id=1LiEN_NJLhg-d2JJsUMIgA_caBixJ5Rub'
-            alt='GoDaddy Guides'
-          />
+          <img src={GuidesImage} alt='GoDaddy Guides' />
         </div>
         <div className='heading'>Why go with GoDaddy?</div>
         <p>

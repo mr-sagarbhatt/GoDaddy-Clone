@@ -9,34 +9,38 @@ import { useCategoryContext } from "../../contexts/CategoryContext";
 import { useSubCategoryContext } from "../../contexts/SubCategoryContext";
 import { useCartContext } from "../../contexts/CartContext";
 import PageLoader from "../Loader/PageLoader";
+import DomainImg from "../../assets/images/Nav-Pro-Desktop-Domains.webp";
+import HostingImg from "../../assets/images/Nav-Pro-Desktop-Hosting.webp";
+import SecurityImg from "../../assets/images/Nav-Pro-Desktop-Security.webp";
+import EmailImg from "../../assets/images/Nav-Pro-Desktop-Email.jpg";
+import CartImg from "../../assets/images/svg/cart.svg";
+import ContactImage from "../../assets/images/svg/phone.svg";
+import HelpImage from "../../assets/images/svg/question-circle.svg";
+import UserImage from "../../assets/images/svg/user.svg";
 
 const Header = ({ page }) => {
   const extras = [
     {
       _id: 1,
-      image:
-        "https://drive.google.com/uc?export=view&id=17QEpaC2ova7qPrsZ0BSkJKeAFkrp8KAs",
+      image: DomainImg,
       linkText: "Transfer your domains",
       link: "#",
     },
     {
       _id: 2,
-      image:
-        "https://drive.google.com/uc?export=view&id=1pRKCFdX69c6Hv6QvjCOU9ZDQJQleQ0e5",
+      image: HostingImg,
       linkText: "Compare Hosting Options",
       link: "#",
     },
     {
       _id: 3,
-      image:
-        "https://drive.google.com/uc?export=view&id=1djaamjTiVqe74YyarKj7I9F2xvHIku3U",
+      image: SecurityImg,
       linkText: "Get help selecting the right type of SSL Certificate",
       link: "#",
     },
     {
       _id: 4,
-      image:
-        "https://drive.google.com/uc?export=view&id=1ZkLlGpV-WQXx2UCwWFB3tqc9X-RLFeXm",
+      image: EmailImg,
       linkText: "Tools to help your small business clients get bigger",
       link: "#",
     },
@@ -250,10 +254,7 @@ const Header = ({ page }) => {
             <div className='contact ms-4'>
               <div data-bs-toggle='collapse' data-bs-target='#collapseContact'>
                 <div className='right-text'>040 67607600</div>
-                <img
-                  src='https://drive.google.com/uc?export=view&id=1KfpLDcBRMmLsD1Xi70oEJEKUrKLsp-UG'
-                  alt='contact'
-                />
+                <img src={ContactImage} alt='contact' />
               </div>
               <div className='collapse' id='collapseContact'>
                 <div
@@ -312,20 +313,14 @@ const Header = ({ page }) => {
             </div>
             <div className='help ms-4'>
               <div className='right-text'>Help</div>
-              <img
-                src='https://drive.google.com/uc?export=view&id=1TkeGnxcG6aQ9L0jEsSiftkz2qJZ2yhv9'
-                alt='help'
-              />
+              <img src={HelpImage} alt='help' />
             </div>
             <div className='user ms-4'>
               <div data-bs-toggle='collapse' data-bs-target='#collapseSignIn'>
                 <div className='right-text'>
                   {Object.keys(user).length > 0 ? user.userName : "Sign In"}
                 </div>
-                <img
-                  src='https://drive.google.com/uc?export=view&id=1dIJcxPNt-Nootme1puNGNAoRjhFvGl_K'
-                  alt='user'
-                />
+                <img src={UserImage} alt='user' />
               </div>
               <div className='collapse' id='collapseSignIn'>
                 <div className='caret'></div>
@@ -427,11 +422,7 @@ const Header = ({ page }) => {
                   to={`/cart`}
                   className='d-flex text-black text-decoration-none'
                 >
-                  <img
-                    className='cart-image pe-1'
-                    src='https://drive.google.com/uc?export=view&id=12UVwUy5O4EE6yrFNZIj8Cl_4S1-0lbto'
-                    alt='cart'
-                  />
+                  <img className='cart-image pe-1' src={CartImg} alt='cart' />
                   <span className='d-none d-lg-flex'>
                     {cart.length > 0 && `Checkout Now`}
                   </span>
