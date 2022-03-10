@@ -1,0 +1,17 @@
+[{
+  "_id": 1,
+  "customerNumber": 703345054,
+  "userName": "sagar",
+  "email": "bsagar112@gmail.com",
+  "password": "$2b$10$hO95E1F8XkH0uZKLU5tDrO7Jaz7RgpA8fBRNn4wxikrUqMJI90u3m",
+  "authTypeId": 3,
+  "roleId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T04:56:12.730Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T04:56:12.730Z"
+  },
+  "__v": 0
+}]

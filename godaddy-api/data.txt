@@ -27,22 +27,22 @@
 {
   "name": "hosting",
   "slug": "hosting",
-  serviceId: 2
+  "serviceId": 2
 }
 {
   "name": "ecommerce hosting",
   "slug": "ecommerce-hosting",
-  serviceId: 2
+  "serviceId": 2
 }
 {
   "name": "wordpress solutions",
   "slug": "wordpress-solutions",
-  serviceId: 2
+  "serviceId": 2
 }
 {
   "name": "servers",
   "slug": "servers",
-  serviceId: 2
+  "serviceId": 2
 }
 {
   "name": "ssl certificates",
@@ -384,4 +384,14 @@
   "percentage": 35,
   "months": 36,
   "productId": 1
+}
+
+// *********** Promo ***********
+
+{
+  "name": "500 rs off",
+  "desc": "500 rs off",
+  "amount": 500,
+  "startTime": "Mon March 16 2022 18:47:59 GMT+0530 (India Standard Time)",
+  "endTime": "Tue March 29 2022 18:46:59 GMT+0530 (India Standard Time)"
 }

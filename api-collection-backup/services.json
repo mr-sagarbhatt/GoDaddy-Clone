@@ -1,0 +1,53 @@
+[{
+  "_id": 1,
+  "name": "domains",
+  "slug": "domains",
+  "extra": [],
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T04:59:11.497Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T04:59:11.497Z"
+  },
+  "__v": 0
+},{
+  "_id": 2,
+  "name": "hosting",
+  "slug": "hosting",
+  "extra": [],
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:00:47.954Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:00:47.954Z"
+  },
+  "__v": 0
+},{
+  "_id": 3,
+  "name": "security",
+  "slug": "security",
+  "extra": [],
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:00:56.153Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:00:56.153Z"
+  },
+  "__v": 0
+},{
+  "_id": 4,
+  "name": "email & marketing",
+  "slug": "email-marketing",
+  "extra": [],
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:01:05.875Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:01:05.875Z"
+  },
+  "__v": 0
+}]

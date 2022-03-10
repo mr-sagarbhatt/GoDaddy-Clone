@@ -1,0 +1,361 @@
+[{
+  "_id": 1,
+  "name": "15% off",
+  "desc": "15% off",
+  "percentage": 15,
+  "months": 12,
+  "productId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:15:48.808Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:15:48.808Z"
+  },
+  "__v": 0
+},{
+  "_id": 2,
+  "name": "25% off",
+  "desc": "25% off",
+  "percentage": 25,
+  "months": 24,
+  "productId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:15:54.635Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:15:54.635Z"
+  },
+  "__v": 0
+},{
+  "_id": 3,
+  "name": "35% off",
+  "desc": "35% off",
+  "percentage": 35,
+  "months": 36,
+  "productId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:16:01.235Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:16:01.235Z"
+  },
+  "__v": 0
+},{
+  "_id": 4,
+  "name": "15% off",
+  "desc": "15% off",
+  "percentage": 15,
+  "months": 12,
+  "productId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:16:28.774Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:16:28.774Z"
+  },
+  "__v": 0
+},{
+  "_id": 5,
+  "name": "15% off",
+  "desc": "15% off",
+  "percentage": 15,
+  "months": 12,
+  "productId": 3,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:16:30.817Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:16:30.817Z"
+  },
+  "__v": 0
+},{
+  "_id": 6,
+  "name": "15% off",
+  "desc": "15% off",
+  "percentage": 15,
+  "months": 12,
+  "productId": 4,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:16:32.563Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:16:32.563Z"
+  },
+  "__v": 0
+},{
+  "_id": 7,
+  "name": "15% off",
+  "desc": "15% off",
+  "percentage": 15,
+  "months": 12,
+  "productId": 5,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:16:34.898Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:16:34.898Z"
+  },
+  "__v": 0
+},{
+  "_id": 8,
+  "name": "15% off",
+  "desc": "15% off",
+  "percentage": 15,
+  "months": 12,
+  "productId": 6,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:16:38.488Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:16:38.488Z"
+  },
+  "__v": 0
+},{
+  "_id": 9,
+  "name": "15% off",
+  "desc": "15% off",
+  "percentage": 15,
+  "months": 12,
+  "productId": 7,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:16:40.471Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:16:40.471Z"
+  },
+  "__v": 0
+},{
+  "_id": 10,
+  "name": "15% off",
+  "desc": "15% off",
+  "percentage": 15,
+  "months": 12,
+  "productId": 8,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:16:42.693Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:16:42.693Z"
+  },
+  "__v": 0
+},{
+  "_id": 11,
+  "name": "25% off",
+  "desc": "25% off",
+  "percentage": 25,
+  "months": 24,
+  "productId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:12.945Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:12.945Z"
+  },
+  "__v": 0
+},{
+  "_id": 12,
+  "name": "25% off",
+  "desc": "25% off",
+  "percentage": 25,
+  "months": 24,
+  "productId": 3,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:14.759Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:14.759Z"
+  },
+  "__v": 0
+},{
+  "_id": 13,
+  "name": "25% off",
+  "desc": "25% off",
+  "percentage": 25,
+  "months": 24,
+  "productId": 4,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:16.930Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:16.930Z"
+  },
+  "__v": 0
+},{
+  "_id": 14,
+  "name": "25% off",
+  "desc": "25% off",
+  "percentage": 25,
+  "months": 24,
+  "productId": 5,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:18.821Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:18.821Z"
+  },
+  "__v": 0
+},{
+  "_id": 15,
+  "name": "25% off",
+  "desc": "25% off",
+  "percentage": 25,
+  "months": 24,
+  "productId": 6,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:20.560Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:20.560Z"
+  },
+  "__v": 0
+},{
+  "_id": 16,
+  "name": "25% off",
+  "desc": "25% off",
+  "percentage": 25,
+  "months": 24,
+  "productId": 7,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:22.277Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:22.277Z"
+  },
+  "__v": 0
+},{
+  "_id": 17,
+  "name": "25% off",
+  "desc": "25% off",
+  "percentage": 25,
+  "months": 24,
+  "productId": 8,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:24.064Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:24.064Z"
+  },
+  "__v": 0
+},{
+  "_id": 18,
+  "name": "35% off",
+  "desc": "35% off",
+  "percentage": 35,
+  "months": 36,
+  "productId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:31.948Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:31.948Z"
+  },
+  "__v": 0
+},{
+  "_id": 19,
+  "name": "35% off",
+  "desc": "35% off",
+  "percentage": 35,
+  "months": 36,
+  "productId": 3,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:33.400Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:33.400Z"
+  },
+  "__v": 0
+},{
+  "_id": 20,
+  "name": "35% off",
+  "desc": "35% off",
+  "percentage": 35,
+  "months": 36,
+  "productId": 4,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:35.043Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:35.043Z"
+  },
+  "__v": 0
+},{
+  "_id": 21,
+  "name": "35% off",
+  "desc": "35% off",
+  "percentage": 35,
+  "months": 36,
+  "productId": 5,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:36.642Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:36.642Z"
+  },
+  "__v": 0
+},{
+  "_id": 22,
+  "name": "35% off",
+  "desc": "35% off",
+  "percentage": 35,
+  "months": 36,
+  "productId": 6,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:38.453Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:38.453Z"
+  },
+  "__v": 0
+},{
+  "_id": 23,
+  "name": "35% off",
+  "desc": "35% off",
+  "percentage": 35,
+  "months": 36,
+  "productId": 7,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:40.101Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:40.101Z"
+  },
+  "__v": 0
+},{
+  "_id": 24,
+  "name": "35% off",
+  "desc": "35% off",
+  "percentage": 35,
+  "months": 36,
+  "productId": 8,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:17:41.944Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:17:41.944Z"
+  },
+  "__v": 0
+}]

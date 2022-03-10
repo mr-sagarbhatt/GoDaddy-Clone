@@ -1,0 +1,41 @@
+[{
+  "_id": 1,
+  "promoCode": "GSU6N6R9EA",
+  "name": "450 rs off",
+  "desc": "450 rs off",
+  "amount": 450,
+  "startTime": {
+    "$date": "2022-03-16T13:17:59Z"
+  },
+  "endTime": {
+    "$date": "2022-03-29T13:16:59Z"
+  },
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:19:06.129Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:19:06.129Z"
+  },
+  "__v": 0
+},{
+  "_id": 2,
+  "promoCode": "2I0K6K4TRB",
+  "name": "500 rs off",
+  "desc": "500 rs off",
+  "amount": 500,
+  "startTime": {
+    "$date": "2022-03-16T13:17:59Z"
+  },
+  "endTime": {
+    "$date": "2022-03-29T13:16:59Z"
+  },
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:19:26.436Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:19:26.436Z"
+  },
+  "__v": 0
+}]

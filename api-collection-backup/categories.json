@@ -1,0 +1,127 @@
+[{
+  "_id": 1,
+  "name": "domains",
+  "slug": "domains",
+  "extra": [],
+  "serviceId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:02:08.221Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:02:08.221Z"
+  },
+  "__v": 0
+},{
+  "_id": 2,
+  "name": "hosting",
+  "slug": "hosting",
+  "extra": [],
+  "serviceId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:02:55.649Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:02:55.649Z"
+  },
+  "__v": 0
+},{
+  "_id": 3,
+  "name": "ecommerce hosting",
+  "slug": "ecommerce-hosting",
+  "extra": [],
+  "serviceId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:03:07.308Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:03:07.308Z"
+  },
+  "__v": 0
+},{
+  "_id": 4,
+  "name": "wordpress solutions",
+  "slug": "wordpress-solutions",
+  "extra": [],
+  "serviceId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:03:16.558Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:03:16.558Z"
+  },
+  "__v": 0
+},{
+  "_id": 5,
+  "name": "servers",
+  "slug": "servers",
+  "extra": [],
+  "serviceId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:03:31.523Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:03:31.523Z"
+  },
+  "__v": 0
+},{
+  "_id": 6,
+  "name": "ssl certificates",
+  "slug": "ssl-certificates",
+  "extra": [],
+  "serviceId": 3,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:03:42.344Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:03:42.344Z"
+  },
+  "__v": 0
+},{
+  "_id": 7,
+  "name": "web security",
+  "slug": "web-security",
+  "extra": [],
+  "serviceId": 3,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:03:51.893Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:03:51.893Z"
+  },
+  "__v": 0
+},{
+  "_id": 8,
+  "name": "email",
+  "slug": "email",
+  "extra": [],
+  "serviceId": 4,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:04:00.062Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:04:00.062Z"
+  },
+  "__v": 0
+},{
+  "_id": 9,
+  "name": "marketing apps & services",
+  "slug": "online-marketing",
+  "extra": [],
+  "serviceId": 4,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:04:07.890Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:04:07.890Z"
+  },
+  "__v": 0
+}]

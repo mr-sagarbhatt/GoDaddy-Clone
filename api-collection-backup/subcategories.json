@@ -1,0 +1,463 @@
+[{
+  "_id": 1,
+  "name": "Domain Name Search",
+  "slug": "domain-name-search",
+  "extra": [],
+  "categoryId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:05:12.557Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:05:12.557Z"
+  },
+  "__v": 0
+},{
+  "_id": 2,
+  "name": "Transfer Domain Names",
+  "slug": "transfer-domain-names",
+  "extra": [],
+  "categoryId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:05:24.581Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:05:24.581Z"
+  },
+  "__v": 0
+},{
+  "_id": 3,
+  "name": "Privacy & Protection for Domains",
+  "slug": "privacy-protection-for-domains",
+  "extra": [],
+  "categoryId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:06:55.848Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:06:55.848Z"
+  },
+  "__v": 0
+},{
+  "_id": 4,
+  "name": "WHOIS",
+  "slug": "whois",
+  "extra": [],
+  "categoryId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:07:15.497Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:07:15.497Z"
+  },
+  "__v": 0
+},{
+  "_id": 5,
+  "name": "Auctions for Domain Names",
+  "slug": "auctions-for-domain-names",
+  "extra": [],
+  "categoryId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:07:24.360Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:07:24.360Z"
+  },
+  "__v": 0
+},{
+  "_id": 6,
+  "name": "Appraise Domain Name Value",
+  "slug": "appraise-domain-name-value",
+  "extra": [],
+  "categoryId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:07:30.876Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:07:30.876Z"
+  },
+  "__v": 0
+},{
+  "_id": 7,
+  "name": "Investing in Domains",
+  "slug": "investing-in-domains",
+  "extra": [],
+  "categoryId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:07:38.432Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:07:38.432Z"
+  },
+  "__v": 0
+},{
+  "_id": 8,
+  "name": "Premium DNS",
+  "slug": "premium-dns",
+  "extra": [],
+  "categoryId": 1,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:07:44.645Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:07:44.645Z"
+  },
+  "__v": 0
+},{
+  "_id": 9,
+  "name": "Web Hosting",
+  "slug": "web-hosting",
+  "extra": [],
+  "categoryId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:07:51.483Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:07:51.483Z"
+  },
+  "__v": 0
+},{
+  "_id": 10,
+  "name": "Business Hosting",
+  "slug": "business-hosting",
+  "extra": [],
+  "categoryId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:07:59.637Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:07:59.637Z"
+  },
+  "__v": 0
+},{
+  "_id": 11,
+  "name": "GoDaddy Website Builder",
+  "slug": "godaddy-website-builder",
+  "extra": [],
+  "categoryId": 2,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:08:06.207Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:08:06.207Z"
+  },
+  "__v": 0
+},{
+  "_id": 12,
+  "name": "Managed WordPress Ecommerce",
+  "slug": "managed-wordpress-ecommerce",
+  "extra": [],
+  "categoryId": 3,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:08:14.433Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:08:14.433Z"
+  },
+  "__v": 0
+},{
+  "_id": 13,
+  "name": "GoDaddy Online Store Builder",
+  "slug": "godaddy-online-store-builder",
+  "extra": [],
+  "categoryId": 3,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:08:19.634Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:08:19.634Z"
+  },
+  "__v": 0
+},{
+  "_id": 14,
+  "name": "WordPress Hosting",
+  "slug": "wordpress-hosting",
+  "extra": [],
+  "categoryId": 4,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:08:26.965Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:08:26.965Z"
+  },
+  "__v": 0
+},{
+  "_id": 15,
+  "name": "Managed WordPress Pro",
+  "slug": "managed-wordpress-pro",
+  "extra": [],
+  "categoryId": 4,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:08:32.417Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:08:32.417Z"
+  },
+  "__v": 0
+},{
+  "_id": 16,
+  "name": "WP Premium Support",
+  "slug": "wp-premium-support",
+  "extra": [],
+  "categoryId": 4,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:08:38.449Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:08:38.449Z"
+  },
+  "__v": 0
+},{
+  "_id": 17,
+  "name": "VPS Hosting",
+  "slug": "vps-hosting",
+  "extra": [],
+  "categoryId": 5,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:08:46.283Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:08:46.283Z"
+  },
+  "__v": 0
+},{
+  "_id": 18,
+  "name": "VPS - Fully Managed",
+  "slug": "vps-fully-managed",
+  "extra": [],
+  "categoryId": 5,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:08:52.423Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:08:52.423Z"
+  },
+  "__v": 0
+},{
+  "_id": 19,
+  "name": "Dedicated Server",
+  "slug": "dedicated-server",
+  "extra": [],
+  "categoryId": 5,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:08:58.969Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:08:58.969Z"
+  },
+  "__v": 0
+},{
+  "_id": 20,
+  "name": "Dedicated Server - Fully Managed",
+  "slug": "dedicated-server-fully-managed",
+  "extra": [],
+  "categoryId": 5,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:09:05.055Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:09:05.055Z"
+  },
+  "__v": 0
+},{
+  "_id": 21,
+  "name": "Reseller (WHMCS) Hosting",
+  "slug": "reseller-hosting",
+  "extra": [],
+  "categoryId": 5,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:09:11.750Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:09:11.750Z"
+  },
+  "__v": 0
+},{
+  "_id": 22,
+  "name": "DV SSL Certificate",
+  "slug": "dv-ssl-certificate",
+  "extra": [],
+  "categoryId": 6,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:09:18.411Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:09:18.411Z"
+  },
+  "__v": 0
+},{
+  "_id": 23,
+  "name": "EV SSL Certificate",
+  "slug": "ev-ssl-certificate",
+  "extra": [],
+  "categoryId": 6,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:09:28.131Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:09:28.131Z"
+  },
+  "__v": 0
+},{
+  "_id": 24,
+  "name": "SAN SSL",
+  "slug": "san-ssl",
+  "extra": [],
+  "categoryId": 6,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:09:34.015Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:09:34.015Z"
+  },
+  "__v": 0
+},{
+  "_id": 25,
+  "name": "Wildcard SSL",
+  "slug": "wildcard-ssl",
+  "extra": [],
+  "categoryId": 6,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:09:54.748Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:09:54.748Z"
+  },
+  "__v": 0
+},{
+  "_id": 26,
+  "name": "Managed SSL Service",
+  "slug": "managed-ssl-service",
+  "extra": [],
+  "categoryId": 6,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:10:00.294Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:10:00.294Z"
+  },
+  "__v": 0
+},{
+  "_id": 27,
+  "name": "Backups",
+  "slug": "backups",
+  "extra": [],
+  "categoryId": 7,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:10:08.561Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:10:08.561Z"
+  },
+  "__v": 0
+},{
+  "_id": 28,
+  "name": "Complete Website Security",
+  "slug": "complete-website-security",
+  "extra": [],
+  "categoryId": 7,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:10:15.872Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:10:15.872Z"
+  },
+  "__v": 0
+},{
+  "_id": 29,
+  "name": "Email & Office 365",
+  "slug": "email-Office-365",
+  "extra": [],
+  "categoryId": 8,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:10:21.718Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:10:21.718Z"
+  },
+  "__v": 0
+},{
+  "_id": 30,
+  "name": "Email Marketing",
+  "slug": "email-marketing",
+  "extra": [],
+  "categoryId": 9,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:10:28.249Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:10:28.249Z"
+  },
+  "__v": 0
+},{
+  "_id": 31,
+  "name": "Digital Marketing Suite",
+  "slug": "digital-marketing-suite",
+  "extra": [],
+  "categoryId": 9,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:10:34.671Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:10:34.671Z"
+  },
+  "__v": 0
+},{
+  "_id": 32,
+  "name": "SEO Services",
+  "slug": "seo-services",
+  "extra": [],
+  "categoryId": 9,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:10:40.738Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:10:40.738Z"
+  },
+  "__v": 0
+},{
+  "_id": 33,
+  "name": "Content & Photo Creator",
+  "slug": "content-photo-creator",
+  "extra": [],
+  "categoryId": 9,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:10:46.855Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:10:46.855Z"
+  },
+  "__v": 0
+}]

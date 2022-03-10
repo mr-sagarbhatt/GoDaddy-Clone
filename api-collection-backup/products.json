@@ -1,0 +1,189 @@
+[{
+  "_id": 1,
+  "name": "Starter",
+  "desc": "Low-cost affordable hosting to get you started.",
+  "extras": [
+    "512 MB RAM",
+    "1 website",
+    "Unmetered bandwidth",
+    "30 GB storage",
+    "1 database",
+    "Free 1-click WordPress install"
+  ],
+  "price": 99,
+  "featured": false,
+  "subCategoryId": 9,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:13:49.601Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:13:49.601Z"
+  },
+  "__v": 0
+},{
+  "_id": 2,
+  "name": "Economy",
+  "desc": "An economical, 100 GB plan with matching domain and email (with terms of 12/mo. or longer).",
+  "extras": [
+    "Standard Performance",
+    "1 website",
+    "100 GB storage",
+    "10 databases",
+    "Unmetered bandwidth",
+    "Free 1-click WordPress install"
+  ],
+  "price": 199,
+  "featured": false,
+  "subCategoryId": 9,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:13:57.052Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:13:57.052Z"
+  },
+  "__v": 0
+},{
+  "_id": 3,
+  "name": "Deluxe",
+  "desc": "Unlimited sites with unlimited storage with matching domain and email (with terms of 12/mo. or longer).",
+  "extras": [
+    "Standard Performance",
+    "Unlimited websites",
+    "Unlimited storage",
+    "25 databases",
+    "Unmetered bandwidth",
+    "Free 1-click WordPress install"
+  ],
+  "price": 299,
+  "featured": false,
+  "subCategoryId": 9,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:14:04.078Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:14:04.078Z"
+  },
+  "__v": 0
+},{
+  "_id": 4,
+  "name": "Ultimate",
+  "desc": "Increased processing power with unlimited sites, storage and databases, plus a matching domain, email and 1 SSL (with terms of 12/mo. or longer).",
+  "extras": [
+    "Increased processing power",
+    "Unlimited websites",
+    "Unlimited storage",
+    "Unlimited databases",
+    "Unmetered bandwidth",
+    "Free 1-click WordPress install"
+  ],
+  "price": 449,
+  "featured": false,
+  "subCategoryId": 9,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:14:11.100Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:14:11.100Z"
+  },
+  "__v": 0
+},{
+  "_id": 5,
+  "name": "Launch",
+  "desc": "For multiple basic sites.",
+  "extras": [
+    "100 GB storage^",
+    "4 GB RAM",
+    "2 CPUs",
+    "Unmetered traffic",
+    "50 websites & databases",
+    "Free, unlimited SSL for all your websites",
+    "Free Professional Email (₹ 348.00/yr value) - 1st year"
+  ],
+  "price": 1159,
+  "featured": false,
+  "subCategoryId": 10,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:14:17.312Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:14:17.312Z"
+  },
+  "__v": 0
+},{
+  "_id": 6,
+  "name": "Enhance",
+  "desc": "For high-traffic WordPress, Joomla and other sites.",
+  "extras": [
+    "200 GB storage^",
+    "8 GB RAM",
+    "4 CPUs",
+    "Unmetered traffic",
+    "100 websites & databases",
+    "Free, unlimited SSL for all your websites",
+    "Free Professional Email (₹ 348.00/yr value) - 1st year"
+  ],
+  "price": 1759,
+  "featured": false,
+  "subCategoryId": 10,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:14:23.563Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:14:23.563Z"
+  },
+  "__v": 0
+},{
+  "_id": 7,
+  "name": "Grow",
+  "desc": "For advanced ecommerce sites like Magento.",
+  "extras": [
+    "300 GB storage^",
+    "16 GB RAM",
+    "8 CPUs",
+    "Unmetered traffic",
+    "150 websites & databases",
+    "Free, unlimited SSL for all your websites",
+    "Free Professional Email (₹ 348.00/yr value) - 1st year"
+  ],
+  "price": 2239,
+  "featured": false,
+  "subCategoryId": 10,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:14:30.206Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:14:30.206Z"
+  },
+  "__v": 0
+},{
+  "_id": 8,
+  "name": "Expand",
+  "desc": "For photography or resource-heavy sites.",
+  "extras": [
+    "400 GB storage^",
+    "32 GB RAM",
+    "16 CPUs",
+    "Unmetered traffic",
+    "200 websites & databases",
+    "Free, unlimited SSL for all your websites",
+    "Free Professional Email (₹ 348.00/yr value) - 1st year"
+  ],
+  "price": 3199,
+  "featured": false,
+  "subCategoryId": 10,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2022-03-09T05:14:36.571Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-09T05:14:36.571Z"
+  },
+  "__v": 0
+}]
